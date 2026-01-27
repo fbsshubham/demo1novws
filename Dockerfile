@@ -23,3 +23,13 @@ EXPOSE 8080
 
 # Run the jar
 CMD ["java", "-jar", "target/*.jar"]
+
+# Copy Maven wrapper
+COPY mvnw .
+COPY .mvn .mvn
+
+# Make it executable
+RUN chmod +x mvnw
+
+# Download dependencies
+RUN ./mvnw dependency:go-offline
