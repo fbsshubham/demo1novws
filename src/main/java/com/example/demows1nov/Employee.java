@@ -1,12 +1,20 @@
 package com.example.demows1nov;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Employee {
 
+	@Id
 	int id;
 	String name;
 	double salary;
 	
-	
+	public Employee()
+	{
+		
+	}
 	
 	public Employee(int id, String name, double salary) {
 		super();

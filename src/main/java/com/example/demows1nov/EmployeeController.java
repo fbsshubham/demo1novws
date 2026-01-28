@@ -35,4 +35,13 @@ public class EmployeeController {
 		return es.getEmployeeByName(name);
 	}
 	
+	@GetMapping("/saveemployee")
+	public Employee saveEmployee()
+	{
+		Employee emp=new Employee(101, "emp1", 10000);
+		
+		return es.saveEmployee(emp);
+	}
+	
+	
 }

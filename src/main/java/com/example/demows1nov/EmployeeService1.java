@@ -1,11 +1,13 @@
 package com.example.demows1nov;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
 public class EmployeeService1 implements EmployeeService {
-
+	@Autowired
+	EmployeeRepository employeeRepository;
 	@Override
 	public void someservice() {
 		// TODO Auto-generated method stub
@@ -23,6 +25,13 @@ public class EmployeeService1 implements EmployeeService {
 	public Employee getEmployeeByName(String name) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public Employee saveEmployee(Employee emp) {
+		
+		
+		return employeeRepository.save(emp);
 	}
 
 }

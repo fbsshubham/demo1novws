@@ -27,4 +27,10 @@ public class EmployeeService2 implements EmployeeService {
 		return null;
 	}
 
+	@Override
+	public Employee saveEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
