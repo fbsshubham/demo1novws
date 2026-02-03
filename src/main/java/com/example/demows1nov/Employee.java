@@ -1,45 +1,61 @@
 package com.example.demows1nov;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import java.time.LocalDate;
 
 @Entity
+@Table(name = "employees")
 public class Employee {
 
-	@Id
-	int id;
-	String name;
-	double salary;
-	
-	public Employee()
-	{
-		
-	}
-	
-	public Employee(int id, String name, double salary) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.salary = salary;
-	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public double getSalary() {
-		return salary;
-	}
-	public void setSalary(double salary) {
-		this.salary = salary;
-	}
-	
-	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String name;
+
+    private Double salary;
+
+    private LocalDate dob; // Date of Birth
+
+    // Constructors
+    public Employee() {}
+
+    public Employee(String name, Double salary, LocalDate dob) {
+        this.name = name;
+        this.salary = salary;
+        this.dob = dob;
+    }
+
+    // Getters & Setters
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Double getSalary() {
+        return salary;
+    }
+
+    public LocalDate getDob() {
+        return dob;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public void setDob(LocalDate dob) {
+        this.dob = dob;
+    }
 }

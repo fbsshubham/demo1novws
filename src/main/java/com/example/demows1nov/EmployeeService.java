@@ -1,15 +1,18 @@
 package com.example.demows1nov;
 
-import org.springframework.stereotype.Service;
-
+import java.util.List;
 
 public interface EmployeeService {
 
-	public void someservice();
-	
-public Employee getEmployeeById(int id);
+    Employee createEmployee(Employee employee);
 
-	public Employee getEmployeeByName(String name) ;
+    Employee getEmployeeById(Long id);
 
-	public Employee saveEmployee(Employee emp);
+    List<Employee> getAllEmployees();
+
+    Employee updateEmployee(Long id, Employee employee);
+
+    void deleteEmployee(Long id);
+
+    String sendBirthdayWish(Long id);
 }
